@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ProjetoTeia
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# DesafioProjetoTeia
+Desafio de programação para ingresso no program TEIA
+>>>>>>> 4464dd1c37c2b17e42830ef8d0e294e405a6caa1
