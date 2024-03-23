@@ -1,0 +1,52 @@
+<table mat-table [dataSource]="photos | photoMatTableFilterPipe : paginator: inputSearchValue: keySort : sortOrder">
+
+    <!-- Id -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="turquesa-caixa futura-bold">
+            <div class="flex th-header">
+                Id
+                <div class="sort-icon-container ml-1" (click)="updateSortCriteria('id')">
+                    <mat-icon fontSet="material-icons-outlined" class="turquesa-caixa icon-sort-order">
+                        {{sortOrder == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}
+                    </mat-icon>
+                </div>
+            </div>
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Nome -->
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef class="turquesa-caixa futura-bold">
+            <div class="flex th-header">
+                Título Foto
+                <div class="sort-icon-container ml-1" (click)="updateSortCriteria('title')">
+                    <mat-icon fontSet="material-icons-outlined" class="turquesa-caixa icon-sort-order">
+                        {{sortOrder == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}
+                    </mat-icon>
+                </div>
+            </div>
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <!-- Preview -->
+    <ng-container matColumnDef="thumbnailUrl">
+        <th mat-header-cell *matHeaderCellDef class="turquesa-caixa futura-bold"> Preview </th>
+        <td mat-cell *matCellDef="let element" class="">
+            <div class="img-container" (click)="viewPhoto(element)">
+                <img [src]="element.thumbnailUrl" />
+            </div>
+        </td>
+    </ng-container>
+
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell laranja-caixa" colspan="4">Nenhuma foto encontrada com este título</td>
+    </tr>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20, 50,100]" showFirstLastButtons aria-label="Select page of periodic elements">
+</mat-paginator>

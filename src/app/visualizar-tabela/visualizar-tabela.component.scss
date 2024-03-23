@@ -1,0 +1,30 @@
+$imgWidth: 25px;
+
+.img-container {
+    cursor: pointer;
+    max-width: $imgWidth;
+    max-height: $imgWidth;
+    border-radius: 0.25rem;
+
+    img {
+        width: $imgWidth;
+        height: $imgWidth;
+    }
+}
+
+.th-header{
+    cursor: pointer;
+}
+
+.th-header:hover{    
+    .sort-icon-container{
+        display: block;
+    }
+}
+
+.sort-icon-container {    
+    display: none;
+    .icon-sort-order {
+        transform: scale(1);
+    }
+}

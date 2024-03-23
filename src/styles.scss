@@ -2,18 +2,63 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+// @import '@angular/material/theming';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
-
+// @import 'material-icons/iconfont/material-icons.scss';
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$projeto-teia-primary: mat.define-palette(mat.$indigo-palette);
-$projeto-teia-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$projeto-teia-primary: mat.define-palette(mat.$blue-palette,900);
+$projeto-teia-accent: mat.define-palette(mat.$orange-palette, 900);
+
+
+@font-face {
+	font-family: 'futura-light';	
+	src:url(assets/fonts/FuturaStdLight.otf) format("opentype");
+}
+
+@font-face {
+	font-family: 'futura-bold';	
+	src:url(assets/fonts/FuturaStdBold.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'futura-book';	
+	src:url(assets/fonts/FuturaStdBook.otf) format('opentype');
+}
+
+
+/** CORES  **/
+$azul-caixa: #005da8;
+$laranja-caixa: #f39200;
+$turquesa-caixa: #54bbab;
+$uva-caixa: rgb(178,111,155);
+$ceu-caixa: rgb(0,181,229);
+$tangerina-caixa: rgb(249,176,0);
+$limao-caixa: rgb(175,202,11);
+$goiaba-caixa: rgb(239,118,94);
+$cinza-caixa:rgb(208,224,227);
+
+$background-body: #f7f7f7;
+$cor-fonte-primaria: $azul-caixa;
+$cor-fonte-secundaria: white;
+$cor-fonte-terciaria: #383838;
+
+/** FONTES **/
+$futura-bold: 'futura-bold',sans-serif;
+$futura-light: 'futura-light',sans-serif;
+$futura-book: 'futura-book',sans-serif;
+
+
+
+
+// $projeto-teia-primary: mat.define-palette($azul-caixa);
+// $projeto-teia-accent: mat.define-palette($laranja-caixa);
 
 // The warn palette is optional (defaults to red).
 $projeto-teia-warn: mat.define-palette(mat.$red-palette);
@@ -27,6 +72,7 @@ $projeto-teia-theme: mat.define-light-theme((
     warn: $projeto-teia-warn,
   ),
   typography: mat.define-typography-config(),
+  //typography: $futura-book,
   density: 0
 ));
 
@@ -38,4 +84,44 @@ $projeto-teia-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: $futura-book }
+
+
+
+
+.futura-light{
+  font-family: $futura-light;
+}
+
+.futura-bold{
+  font-family: $futura-bold;
+}
+
+.futura-book{
+  font-family: $futura-book;
+}
+
+.header-i{
+  font-family: $futura-bold;
+  color: $laranja-caixa;
+  margin-top: 0px;
+}
+
+.font-override {
+  font-family: $futura-book;
+  color: $cor-fonte-terciaria;
+}
+
+
+.azul-caixa {
+  color: $azul-caixa;
+}
+
+.laranja-caixa {
+  color: $laranja-caixa;
+}
+
+
+.turquesa-caixa {
+  color: $turquesa-caixa;
+}

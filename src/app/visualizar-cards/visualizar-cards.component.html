@@ -1,0 +1,20 @@
+<div class="grid">
+    @for(photo of photos; track photo.id;  let index = $index){
+        @if(index < showSize){
+            <div class="col-12 md:col-6 lg:col-3">
+                <div class="card" (click)="viewPhoto(photo)">
+                    <p class="futura-book">
+                        {{photo.id}}. {{photo.title}}
+                    </p>
+                    <div class="img-div-container">
+                        <img [src]="photo.thumbnailUrl" />
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<div class="w-full p-2 text-center cursor-pointer underline laranja-caixa text-sm" (click)="renderNextPage()">
+    carregar mais...
+</div>
